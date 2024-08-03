@@ -1,6 +1,12 @@
 use datafusion::error::Result;
 use datafusion::prelude::*;
 
+/**
+ * All identifiers are effectively made lower-case in SQL,
+ * so if csv file has capital letters (ex: Name)
+ * you must put your column name in double quotes or the examples won’t work.
+ **/
+
 pub(crate) async fn sql_api_csv() -> Result<()> {
     let ctx = SessionContext::new();
     ctx.register_csv(
