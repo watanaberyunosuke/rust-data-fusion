@@ -3,6 +3,10 @@ mod dataframe_api_csv_cap;
 mod r#read_csv;
 mod sql_api_csv_cap;
 
+// Allocate memory
+#[global_allocator]
+static ALLOC: snmalloc_rs::SnMalloc = snmalloc_rs::SnMalloc;
+
 #[tokio::main]
 async fn main() {
     println!("read_csv result");
