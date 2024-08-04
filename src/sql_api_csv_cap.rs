@@ -7,7 +7,7 @@ use datafusion::prelude::*;
  * you must put your column name in double quotes or the examples won’t work.
  **/
 
-pub(crate) async fn sql_api_csv() -> Result<()> {
+pub(crate) async fn sql_api_csv_cap() -> Result<()> {
     let ctx = SessionContext::new();
     ctx.register_csv(
         "example",
